@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<p>Employee Management System</p>
+<form action="#" th:action="@{/empes}">
+Enter the name:<input type="text" name="keyword" id="keyword" th:value="${keyword}" / >
+<input type="submit">
+</form>
+<form action="#" th:action="@{/email}">
+Enter the Email:<input type="text" name="email" id="email" th:value="${email}" / >
+<input type="submit">
+</form>
+<table border="1">
+<tr>
+<th>EMP Id</th>
+<th>EMP NAME</th>
+<th>EMP MAIL</th>
+<th>EMP SAL</th>
+<th>EMP AGE</th>
+</tr>
+<tr th:each="emp : ${listemp}">
+<td th:text="${emp.eid}"></td>
+<td th:text="${emp.ename}"></td>
+<td th:text="${emp.email}"></td>
+<td th:text="${emp.sal}"></td>
+<td th:text="${emp.age}"></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
